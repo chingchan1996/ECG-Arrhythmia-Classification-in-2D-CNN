@@ -23,5 +23,3 @@ wget http://physionet.org/physiobank/database/mitdb/{100..234}.hea
 wget http://physionet.org/physiobank/database/mitdb/{100..234}.atr
 
 cd ..
-
-# Now we will start the actual conversion
