@@ -1,23 +1,23 @@
 # ECG-Arrhythmia-Classification-in-2D-CNN
 This is an implementation based on this paper, **"ECG arrhythmia classification using a 2-D convolutional neural network", Tae Joon Jun et al., CVPR 2018."** with some personal modifications
 
-#**Dataset**
+# **Dataset**
 This repo adapts [MIT-BIH Arrhythmia Database](https://physionet.org/physiobank/database/mitdb/) as training and testing dataset.
 
-##**Download Dataset**
+## **Download Dataset**
 The download file can be found under ````/mit_arrythmia_dat/````
 >dataset_downloader.sh
 
 the script is modified from [MIT-BIH-Arrhythmia-Downloader](https://github.com/lext/MIT-BIH-Arrhythmia-Downloader.git)
 
-##**Data Pre-Process**
+## **Data Pre-Process**
 To turn ECG signals to images, the script can be found under ```/mit_arrhythmua_dat/```
 >readDataset.py
 
 The script will output EIGHT types of heart beats based on the annotations that the officials provide. A heart beat is defined by the peak of R waves
 according to the contents on the websites.
 
-####**Difference from the paper - The adapt formula to produce images**
+#### **Difference from the paper - The adapt formula to produce images**
 
 1. According to the paper, each images is form by the following formula
 
@@ -33,7 +33,7 @@ according to the contents on the websites.
 2. The output size of images are **196x128** instead of **128x128** proposed in the paper.
 
 
-####**Difference from the paper - Data preprocess**
+#### **Difference from the paper - Data preprocess**
 
 According to the paper, each image is cropped and resized to 9 versions.
 ...
