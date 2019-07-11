@@ -275,7 +275,11 @@ mit_arrythmia_dat/233.hea
 mit_arrythmia_dat/234.atr
 mit_arrythmia_dat/234.dat
 mit_arrythmia_dat/234.hea
-results/
 test_model_mtl.py
 train_model_v3_mtl.py
 /train_model_paper_validation_remain.py
+/results/192_128_40eps/proposed_model_False.h5
+/results/192_128_class_weight_40eps/proposed_model_False.h5
+/results/192_128_class_weight_120eps/proposed_model_False.h5
+/results/special_120eps/proposed_model_False.h5
+/results/special_div2/proposed_model_False.h5

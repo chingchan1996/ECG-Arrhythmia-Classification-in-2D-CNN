@@ -42,7 +42,7 @@ def main():
     model.compile(loss='categorical_crossentropy', optimizer=adm, metrics=['accuracy'])
     model.summary()
 
-    model.load_weights('result/special_v3/proposed_model_False.h5', by_name=True)
+    model.load_weights('result/special_120eps/proposed_model_False.h5', by_name=True)
 
     # ---------------------------change models & weights--------------------
 

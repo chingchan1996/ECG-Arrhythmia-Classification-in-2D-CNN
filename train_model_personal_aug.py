@@ -129,7 +129,7 @@ def generator_val_batch(val_txt,batch_size,num_classes,img_path,inputH,inputW):
 
 def main():
 
-    outputdir = 'result/192_128_class_weight_v3_120eps/'
+    outputdir = 'result/192_128_class_weight_120eps/'
     if os.path.isdir(outputdir):
         print('save in :' + outputdir)
     else:
