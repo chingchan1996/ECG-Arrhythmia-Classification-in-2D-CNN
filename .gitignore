@@ -1,0 +1,279 @@
+# Created by .ignore support plugin (hsz.mobi)
+### Python template
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
+#   However, in case of collaboration, if having platform-specific dependencies or dependencies
+#   having no cross-platform support, pipenv may install dependencies that don't work, or not
+#   install all needed dependencies.
+#Pipfile.lock
+
+# celery beat schedule file
+celerybeat-schedule
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+.DS_Store
+.gitignore
+.idea/ECG-Arrhythmia-Classification.iml
+.idea/misc.xml
+.idea/modules.xml
+.idea/workspace.xml
+mit_arrythmia_dat/100.atr
+mit_arrythmia_dat/100.dat
+mit_arrythmia_dat/100.hea
+mit_arrythmia_dat/101.atr
+mit_arrythmia_dat/101.dat
+mit_arrythmia_dat/101.hea
+mit_arrythmia_dat/102.atr
+mit_arrythmia_dat/102.dat
+mit_arrythmia_dat/102.hea
+mit_arrythmia_dat/103.atr
+mit_arrythmia_dat/103.dat
+mit_arrythmia_dat/103.hea
+mit_arrythmia_dat/104.atr
+mit_arrythmia_dat/104.dat
+mit_arrythmia_dat/104.hea
+mit_arrythmia_dat/105.atr
+mit_arrythmia_dat/105.dat
+mit_arrythmia_dat/105.hea
+mit_arrythmia_dat/106.atr
+mit_arrythmia_dat/106.dat
+mit_arrythmia_dat/106.hea
+mit_arrythmia_dat/107.atr
+mit_arrythmia_dat/107.dat
+mit_arrythmia_dat/107.hea
+mit_arrythmia_dat/108.atr
+mit_arrythmia_dat/108.dat
+mit_arrythmia_dat/108.hea
+mit_arrythmia_dat/109.atr
+mit_arrythmia_dat/109.dat
+mit_arrythmia_dat/109.hea
+mit_arrythmia_dat/111.atr
+mit_arrythmia_dat/111.dat
+mit_arrythmia_dat/111.hea
+mit_arrythmia_dat/112.atr
+mit_arrythmia_dat/112.dat
+mit_arrythmia_dat/112.hea
+mit_arrythmia_dat/113.atr
+mit_arrythmia_dat/113.dat
+mit_arrythmia_dat/113.hea
+mit_arrythmia_dat/114.atr
+mit_arrythmia_dat/114.dat
+mit_arrythmia_dat/114.hea
+mit_arrythmia_dat/115.atr
+mit_arrythmia_dat/115.dat
+mit_arrythmia_dat/115.hea
+mit_arrythmia_dat/116.atr
+mit_arrythmia_dat/116.dat
+mit_arrythmia_dat/116.hea
+mit_arrythmia_dat/117.atr
+mit_arrythmia_dat/117.dat
+mit_arrythmia_dat/117.hea
+mit_arrythmia_dat/118.atr
+mit_arrythmia_dat/118.dat
+mit_arrythmia_dat/118.hea
+mit_arrythmia_dat/119.atr
+mit_arrythmia_dat/119.dat
+mit_arrythmia_dat/119.hea
+mit_arrythmia_dat/121.atr
+mit_arrythmia_dat/121.dat
+mit_arrythmia_dat/121.hea
+mit_arrythmia_dat/122.atr
+mit_arrythmia_dat/122.dat
+mit_arrythmia_dat/122.hea
+mit_arrythmia_dat/123.atr
+mit_arrythmia_dat/123.dat
+mit_arrythmia_dat/123.hea
+mit_arrythmia_dat/124.atr
+mit_arrythmia_dat/124.dat
+mit_arrythmia_dat/124.hea
+mit_arrythmia_dat/200.atr
+mit_arrythmia_dat/200.dat
+mit_arrythmia_dat/200.hea
+mit_arrythmia_dat/201.atr
+mit_arrythmia_dat/201.dat
+mit_arrythmia_dat/201.hea
+mit_arrythmia_dat/202.atr
+mit_arrythmia_dat/202.dat
+mit_arrythmia_dat/202.hea
+mit_arrythmia_dat/203.atr
+mit_arrythmia_dat/203.dat
+mit_arrythmia_dat/203.hea
+mit_arrythmia_dat/205.atr
+mit_arrythmia_dat/205.dat
+mit_arrythmia_dat/205.hea
+mit_arrythmia_dat/207.atr
+mit_arrythmia_dat/207.dat
+mit_arrythmia_dat/207.hea
+mit_arrythmia_dat/208.atr
+mit_arrythmia_dat/208.dat
+mit_arrythmia_dat/208.hea
+mit_arrythmia_dat/209.atr
+mit_arrythmia_dat/209.dat
+mit_arrythmia_dat/209.hea
+mit_arrythmia_dat/210.atr
+mit_arrythmia_dat/210.dat
+mit_arrythmia_dat/210.hea
+mit_arrythmia_dat/212.atr
+mit_arrythmia_dat/212.dat
+mit_arrythmia_dat/212.hea
+mit_arrythmia_dat/213.atr
+mit_arrythmia_dat/213.dat
+mit_arrythmia_dat/213.hea
+mit_arrythmia_dat/214.atr
+mit_arrythmia_dat/214.dat
+mit_arrythmia_dat/214.hea
+mit_arrythmia_dat/215.atr
+mit_arrythmia_dat/215.dat
+mit_arrythmia_dat/215.hea
+mit_arrythmia_dat/217.atr
+mit_arrythmia_dat/217.dat
+mit_arrythmia_dat/217.hea
+mit_arrythmia_dat/219.atr
+mit_arrythmia_dat/219.dat
+mit_arrythmia_dat/219.hea
+mit_arrythmia_dat/220.atr
+mit_arrythmia_dat/220.dat
+mit_arrythmia_dat/220.hea
+mit_arrythmia_dat/221.atr
+mit_arrythmia_dat/221.dat
+mit_arrythmia_dat/221.hea
+mit_arrythmia_dat/222.atr
+mit_arrythmia_dat/222.dat
+mit_arrythmia_dat/222.hea
+mit_arrythmia_dat/223.atr
+mit_arrythmia_dat/223.dat
+mit_arrythmia_dat/223.hea
+mit_arrythmia_dat/228.atr
+mit_arrythmia_dat/228.dat
+mit_arrythmia_dat/228.hea
+mit_arrythmia_dat/230.atr
+mit_arrythmia_dat/230.dat
+mit_arrythmia_dat/230.hea
+mit_arrythmia_dat/231.atr
+mit_arrythmia_dat/231.dat
+mit_arrythmia_dat/231.hea
+mit_arrythmia_dat/232.atr
+mit_arrythmia_dat/232.dat
+mit_arrythmia_dat/232.hea
+mit_arrythmia_dat/233.atr
+mit_arrythmia_dat/233.dat
+mit_arrythmia_dat/233.hea
+mit_arrythmia_dat/234.atr
+mit_arrythmia_dat/234.dat
+mit_arrythmia_dat/234.hea
+results/
+test_model_mtl.py
+train_model_v3_mtl.py
