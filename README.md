@@ -1,6 +1,12 @@
 # ECG-Arrhythmia-Classification-in-2D-CNN
 This is an implementation based on this paper, **"[ECG arrhythmia classification using a 2-D convolutional neural network", Tae Joon Jun et al., CVPR 2018.](https://arxiv.org/abs/1804.06812)"** with some personal modifications
 
+# **Dependencies**
+
+####**Tensorflow**
+####**Keras**
+
+
 # **Dataset**
 This repo adapts [MIT-BIH Arrhythmia Database](https://physionet.org/physiobank/database/mitdb/) as training and testing dataset.
 
