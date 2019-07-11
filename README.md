@@ -3,9 +3,9 @@ This is an implementation based on this paper, **"[ECG arrhythmia classification
 
 # **Dependencies**
 
-####**Python3**
-####**Tensorflow**
-####**Keras**
+#### **Python3**
+#### **Tensorflow**
+#### **Keras**
 
 
 # **Dataset**
