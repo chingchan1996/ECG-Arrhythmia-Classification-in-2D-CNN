@@ -124,6 +124,7 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+.idea
 .DS_Store
 .gitignore
 .idea/ECG-Arrhythmia-Classification.iml
