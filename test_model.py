@@ -3,11 +3,15 @@ from models import proposed_model
 from keras.optimizers import Adam
 import numpy as np
 import cv2
-import random
 import os
+import time
+import random
+import glob
+import os
+from keras.utils import np_utils
 from tqdm import tqdm
 
-os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+os.environ["CUDA_VISIBLE_DEVICES"] = "7"
 
 import tensorflow as tf
 from keras.backend.tensorflow_backend import set_session
@@ -18,13 +22,16 @@ set_session(tf.Session(config=config))
 
 def main():
     # init model
-    class_names = ['Normal', 'LBBB', 'RBBB', 'APC', 'PVC', 'PAB', 'VEB', 'VFW']
+    #class_names = ['Normal', 'LBBB', 'RBBB', 'APC', 'PVC', 'PAB', 'VEB', 'VFW']
+    class_names = ['LBBB', 'RBBB', 'APC', 'PVC', 'PAB', 'VEB', 'VFW']
+    #class_names = ['Normal', 'Abnormal']
+
     #PE is PAB
     imageh = 128
     imagew = 128
 
-    inputH = 96
-    inputW = 96
+    inputH = 128
+    inputW = 192
 
     # ---------------------------change file models & weights--------------------
 
@@ -35,16 +42,16 @@ def main():
     model.compile(loss='categorical_crossentropy', optimizer=adm, metrics=['accuracy'])
     model.summary()
 
-    model.load_weights('result/first_attempt_False/proposed_model_False.h5', by_name=True)
+    model.load_weights('result/special_v3/proposed_model_False.h5', by_name=True)
 
     # ---------------------------change models & weights--------------------
 
-    test_file = './MIT-BIH_AD_test.txt'
-    test_img_path = '/home/cc_lee/Dataset/MIT-BIH_AD'
+    test_file = './MIT-BIH_AD_sp_test.txt'
+    test_img_path = '/data/MIT-BIH_AD_v3'
 
     augmentation = False
     output_img = False
-    outputdir = os.path.join('./inference/', str(augmentation))
+    outputdir = os.path.join('./inference_v2/', str(augmentation))
     os.makedirs(outputdir, exist_ok=True)
 
     os.makedirs(outputdir+'/False', exist_ok=True)
@@ -57,8 +64,15 @@ def main():
     count = 0
     total = len(lines)
 
-    counter = {'Normal': 0, 'LBBB': 0, 'RBBB': 0, 'APC': 0, 'PVC': 0, 'PAB': 0, 'VEB': 0, 'VFW': 0}
-    tp_counter = {'Normal': 0, 'LBBB': 0, 'RBBB': 0, 'APC': 0, 'PVC': 0, 'PAB': 0, 'VEB': 0, 'VFW': 0}
+    # counter = {'Normal': 0, 'LBBB': 0, 'RBBB': 0, 'APC': 0, 'PVC': 0, 'PAB': 0, 'VEB': 0, 'VFW': 0}
+    # tp_counter = {'Normal': 0, 'LBBB': 0, 'RBBB': 0, 'APC': 0, 'PVC': 0, 'PAB': 0, 'VEB': 0, 'VFW': 0}
+
+    counter = {'LBBB': 0, 'RBBB': 0, 'APC': 0, 'PVC': 0, 'PAB': 0, 'VEB': 0, 'VFW': 0}
+    tp_counter = {'LBBB': 0, 'RBBB': 0, 'APC': 0, 'PVC': 0, 'PAB': 0, 'VEB': 0, 'VFW': 0}
+
+    #counter = {'Normal':0, 'Abnormal':0}
+    #tp_counter = {'Normal':0, 'Abnormal':0}
+
     for line in tqdm(lines):
         path = line.split(' ')[0]
         label = line.split(' ')[-1]
@@ -78,7 +92,7 @@ def main():
             pass
 
         input_data = np.zeros((1, imagew, imageh, 3), dtype='float32')
-        input_data[0] = image
+        input_data[0] = image[:,64:64+128,:]
 
         pred = model.predict(input_data)
         label = np.argmax(pred[0])
@@ -88,7 +102,7 @@ def main():
             tp_counter[class_names[label]] += 1
 
         count += 1
-        counter[class_names[label]] += 1
+        counter[class_names[answer]] += 1
 
         if output_img:
             if np.argmax(pred[0]) == 1:
@@ -115,7 +129,7 @@ def main():
 
 
     print('{}/{} Acc: {} Pred:{} Answer: {}'.format(count, total, str(TP / count), class_names[label], class_names[answer] ) )
-    print('Normal:{}/{}={},\n LBBB:{}/{}={},\n RBBB:{}/{}={},\n APC:{}/{}={},\n PVC:{}/{}={},\n PAB:{}/{}={},\n VEB:{}/{}={},\n VFW:{}/{}={}'.format(
+    '''print('Normal:{}/{}={},\n LBBB:{}/{}={},\n RBBB:{}/{}={},\n APC:{}/{}={},\n PVC:{}/{}={},\n PAB:{}/{}={},\n VEB:{}/{}={},\n VFW:{}/{}={}'.format(
         tp_counter['Normal'], counter['Normal'], (tp_counter['Normal']/counter['Normal']),
         tp_counter['LBBB'], counter['LBBB'], (tp_counter['LBBB'] / counter['LBBB']),
         tp_counter['RBBB'], counter['RBBB'], (tp_counter['RBBB'] / counter['RBBB']),
@@ -126,7 +140,21 @@ def main():
         tp_counter['VFW'], counter['VFW'], (tp_counter['VFW'] / counter['VFW'])
 
     ))
+    '''
+    print('LBBB:{}/{}={},\n RBBB:{}/{}={},\n APC:{}/{}={},\n PVC:{}/{}={},\n PAB:{}/{}={},\n VEB:{}/{}={},\n VFW:{}/{}={}'.format(
+        tp_counter['LBBB'], counter['LBBB'], (tp_counter['LBBB'] / counter['LBBB']),
+        tp_counter['RBBB'], counter['RBBB'], (tp_counter['RBBB'] / counter['RBBB']),
+        tp_counter['APC'], counter['APC'], (tp_counter['APC'] / counter['APC']),
+        tp_counter['PVC'], counter['PVC'], (tp_counter['PVC'] / counter['PVC']),
+        tp_counter['PAB'], counter['PAB'], (tp_counter['PAB'] / counter['PAB']),
+        tp_counter['VEB'], counter['VEB'], (tp_counter['VEB'] / counter['VEB']),
+        tp_counter['VFW'], counter['VFW'], (tp_counter['VFW'] / counter['VFW'])
 
-
+    ))
+    '''
+    print( 'Normal:{}/{}={}, \n Abnormal:{}/{}={}'.format(
+        tp_counter['Normal'], counter['Normal'], (tp_counter['Normal'] / counter['Normal']),
+        tp_counter['Abnormal'], counter['Abnormal'], (tp_counter['Abnormal'] / counter['Abnormal'])))
+    '''
 if __name__ == '__main__':
     main()
