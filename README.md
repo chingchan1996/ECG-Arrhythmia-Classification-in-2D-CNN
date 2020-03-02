@@ -39,3 +39,6 @@ According to the paper, each image is cropped and resized to 9 versions.
 ...
 
 There are more contents to be fulfilled in the future.
+
+### **THIS REPO IS LIKELY NOT UPDATED IN THE FUTURE DUE TO LOST OF RESEARCHED DATA**
+The main conclusion for this work is the insuffiencient opensource dataset leads to the overfitting to the trained model. When considering this topic, the researchers should be awared of the limited training resource.
